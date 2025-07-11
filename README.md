@@ -1,9 +1,9 @@
-##netflix clone
+#Netflix clone
 
 - npm init react-app netflix
 
-tailwind install 
- - npm install -D tailwindcss@3
+-tailwind install 
+    npm install -D tailwindcss@3
     npx tailwindcss init
 
 -add in tailwind.config
@@ -20,8 +20,8 @@ tailwind install
 
 
 
-tasks for netflix
-without auth
+#tasks for Netflix
+-without auth
     - Login/Signup page (signin/signup form after login reirect to browse)
 
 -Browse after auth
