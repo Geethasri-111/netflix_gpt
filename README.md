@@ -2,11 +2,11 @@
 
 - npm init react-app netflix
 
--tailwind install 
+- tailwind install 
     - npm install -D tailwindcss@3
     - npx tailwindcss init
 
--add in tailwind.config
+- add in tailwind.config
     - content: ["./src/**/*.{js,jsx,ts,tsx}",],
 
 - in index.css add
@@ -15,6 +15,13 @@
     - @tailwind utilities;
 
 - npm start
+
+#project
+- react-app
+-   tailwind
+-   header
+-   Login
+-   SignupForm
 
 
 
