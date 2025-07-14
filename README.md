@@ -22,6 +22,12 @@
 -   header
 -   Login
 -   SignupForm
+-   Routing
+-   Formvalidation
+-   useRef
+-   firebase setup
+-   deploy appto production
+-   create signup user account
 
 
 
