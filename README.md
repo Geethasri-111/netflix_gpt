@@ -28,6 +28,8 @@
 -   firebase setup
 -   deploy appto production
 -   create signup user account
+-   implement signin userapi
+-   created redux store with userSlice
 
 
 

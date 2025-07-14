@@ -2,35 +2,70 @@ import React, { useRef, useState } from 'react'
 import Header from '../Header/Header'
 import './Login.css';
 import { validData } from '../../utils/Validate';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword,updateProfile  } from "firebase/auth";
 import { auth } from '../../utils/fireBase';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../utils/userSlice';
 const Login = () => {
     const [signedIn,setSignedIn]= useState(true);
     const [errMsg,setErrMsg] = useState(null);
+    const dispatch =useDispatch();
 
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const nameRef = useRef(null);
+    const nameRef = useRef('');
+
+    const navigate = useNavigate();
 
     const toggleSignIn = ()=>{
         setSignedIn(!signedIn);
     }
     const handleFormSubmit = ()=>{
         //validation
-        const ErrorMsg = validData(emailRef.current.value,passwordRef.current.value,nameRef.current.value);
+        const ErrorMsg = validData(emailRef.current.value,passwordRef.current.value);
+       console.log(ErrorMsg);
         setErrMsg(ErrorMsg);
        if(ErrorMsg) return;
         //create new user(sign in & sign up)
         if(signedIn){
             //signin logic
-
+            signInWithEmailAndPassword(auth,emailRef.current.value,passwordRef.current.value)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;                   
+                     navigate('/browse');
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrMsg(errorCode+':'+errorMessage);
+                });
         }else{
             //sign up logic
             createUserWithEmailAndPassword(auth,emailRef.current.value,passwordRef.current.value)
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                console.log(user);
+                updateProfile(user, {
+                    displayName: nameRef.current.value,
+                    photoURL: "https://example.com/jane-q-user/profile.jpg"
+                  }).then(() => {
+                    // Profile updated!
+                    const {uid,email,displayName} = auth.currentUser;
+                    dispatch(addUser({
+                        uid:uid,
+                        email:email,
+                        name:displayName
+                    }
+                    ))
+                    
+                    navigate('/browse');
+                  }).catch((error) => {
+                    // An error occurred
+                    // ...
+                  }); 
             })
             .catch((error) => {
                 const errorCode = error.code;
