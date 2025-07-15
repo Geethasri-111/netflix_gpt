@@ -30,6 +30,9 @@
 -   create signup user account
 -   implement signin userapi
 -   created redux store with userSlice
+-   signou impl
+-   update profile
+-   Bugfix:Signupuser name display & if user not logged in redirect toLogin/Browse & viceversa
 
 
 

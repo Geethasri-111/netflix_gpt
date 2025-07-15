@@ -4,7 +4,6 @@ import './Login.css';
 import { validData } from '../../utils/Validate';
 import { createUserWithEmailAndPassword , signInWithEmailAndPassword,updateProfile  } from "firebase/auth";
 import { auth } from '../../utils/fireBase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../utils/userSlice';
 const Login = () => {
@@ -15,8 +14,6 @@ const Login = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const nameRef = useRef('');
-
-    const navigate = useNavigate();
 
     const toggleSignIn = ()=>{
         setSignedIn(!signedIn);
@@ -33,9 +30,7 @@ const Login = () => {
             signInWithEmailAndPassword(auth,emailRef.current.value,passwordRef.current.value)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;                   
-                     navigate('/browse');
-                    // ...
+                    const user = userCredential.user;   
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -60,8 +55,6 @@ const Login = () => {
                         name:displayName
                     }
                     ))
-                    
-                    navigate('/browse');
                   }).catch((error) => {
                     // An error occurred
                     // ...
