@@ -33,6 +33,14 @@
 -   signou impl
 -   update profile
 -   Bugfix:Signupuser name display & if user not logged in redirect toLogin/Browse & viceversa
+- unsubscribed to onauthstatechange callback
+-   TMDB create an account subscribe and get accesstoekn
+-   get data from TMDB nowplaying aPI for movies list 
+- created custom hooks for nowplayingmoviesList & trailervideo
+-   craete movieSlice and updated the storewith the data
+-   created trailer and titleofvideo components
+    - fetch data title & trailer,updated store with data acquired
+    - embedded youtube autoplay video for trailer with tailwind
 
 
 
