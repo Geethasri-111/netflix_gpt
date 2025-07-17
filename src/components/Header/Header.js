@@ -44,7 +44,7 @@ const Header = () => {
     <div className='absolute px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between z-10'>
        
       <img src={logo_url}
-      alt="logo" className='w-44'/>
+      alt="logo" className='w-32'/>
       <div className='userIcon flex items-center relative' onClick={userOption}>
         <img src={user_avatar} alt="userIcon"/>
        

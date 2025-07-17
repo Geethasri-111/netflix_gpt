@@ -41,6 +41,10 @@
 -   created trailer and titleofvideo components
     - fetch data title & trailer,updated store with data acquired
     - embedded youtube autoplay video for trailer with tailwind
+-   secondary components -contains collection of movies set
+-   created a movieList and mpviecard components for sections of movies
+-   create popular movies customHook  and display on the page
+
 
 
 
