@@ -2,8 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import VideoTitle from '../VideoTitle/VideoTitle';
 import VideoBackground from '../VideoBackground/VideoBackground';
-import TrailerSecondContainer from '../TrailerSecondContainer/TrailerSecondContainer';
-
 
 const TrailerContainer = () => {
 
@@ -15,7 +13,7 @@ const TrailerContainer = () => {
     <div className='relative'>
         <VideoTitle title={title} description={overview}/>
         <VideoBackground movieId={id}/>
-        <TrailerSecondContainer/>
+        
     </div>
     
   )

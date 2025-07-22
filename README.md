@@ -44,7 +44,9 @@
 -   secondary components -contains collection of movies set
 -   created a movieList and mpviecard components for sections of movies
 -   create popular movies customHook  and display on the page
-
+-   building GPtsearch feature
+-   multi language page for search
+-   gpt APIsintegration
 
 
 

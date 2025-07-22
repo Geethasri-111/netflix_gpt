@@ -10,3 +10,10 @@ export const api_options={
   }
 
 export const poster_url = 'https://image.tmdb.org/t/p/w780';
+
+export const SUPPORTED_LANG = [
+  {identifier:'en',name:'English'},
+  {identifier:'hindi',name:'Hindi'},
+  {identifier:'es',name:'Spanish'}
+
+]
