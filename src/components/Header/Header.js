@@ -68,7 +68,7 @@ const Header = () => {
         </select>
         )}
         <button className='px-3 py-1 mx-2 bg-orange-800 text-white'
-        onClick={handleSearch}>{showsearch ? 'GPT Search': 'Home Page'}</button>
+        onClick={handleSearch}>{showsearch ? 'Home Page': 'GPT Search'}</button>
         </>
       )}
       <div className='userIcon flex items-center relative' onClick={userOption}>
